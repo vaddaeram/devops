@@ -1,0 +1,4 @@
+## fileshare
+kubectl create secret generic azure-secret --from-literal=azurestorageaccountname=devopsbychandu --from-literal=azurestorageaccountkey=aLJL26BbLo4l9uXoAQoz7JVrZjZLP696PkB82P7YPudqIN6EVBqft7TM1meFkqpz2ZE2Wb9H+EM8+AStuvHozg==
+
+kubectl exec -it nginx /bin/sh

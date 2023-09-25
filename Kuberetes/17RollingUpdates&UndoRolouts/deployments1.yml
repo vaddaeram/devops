@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rollout
+  namespace: dev
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  selector:
+    matchLabels:
+      app: rollout
+  template:
+    metadata:
+      labels:
+        app: rollout
+    spec:
+      containers:
+      - image: kammana/nodeapp:v1
+        name: rollout
+        ports:
+        - containerPort: 8080
